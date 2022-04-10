@@ -135,41 +135,6 @@ main p {
   font-size: 20px;
 }
 
-input {
-  padding: 16px 24px;
-  background: white;
-  border: 1px solid #19357C;
-  box-sizing: border-box;
-  border-radius: 4px 0 0 4px;
-  outline: none;
-
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-
-  color: #242424;
-}
-
-form {
-  margin-top: 3em;
-  display: flex;
-}
-
-button {
-  cursor: pointer;
-  background: #19357C;
-  outline: none;
-  border: 1px solid #19357C;
-  padding: 16px 56px;
-  border-radius: 0 4px 4px 0;
-
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-
-  color: white;
-}
-
 footer {
   position: fixed;
   bottom: 0;
@@ -222,20 +187,6 @@ footer {
   header {
     display: flex;
     justify-content: center;
-  }
-
-  form {
-    flex-direction: column;
-    width: 80%;
-  }
-
-  button, input {
-    border-radius: 0;
-    flex-shrink: 0;
-  }
-
-  button {
-    margin-top: 1em;
   }
 
   .dreampire {
