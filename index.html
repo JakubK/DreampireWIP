@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./img/icon.png"/>
   <title>Dreampire</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,19 +17,14 @@
   <header>
     <img class="dreampire" src="./img/dreampire.png"/>
   </header>
-
-  <svg class="abstract abstract__left" width="379" height="945" viewBox="0 0 379 945" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="-283.749" y="-12" width="778.813" height="778.813" rx="33" transform="rotate(30.0717 -283.749 -12)" fill="#19357C"/>
-  </svg>
-
-  <svg class="abstract abstract__right" width="309" height="659" viewBox="0 0 309 659" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="-12" y="407.453" width="525.912" height="525.912" rx="33" transform="rotate(-60 -12 407.453)" fill="#A2DEEF"/>
-  </svg>
-
-  <svg class="abstract abstract__right-bottom" width="535" height="450" viewBox="0 0 535 450" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="378.251" y="-12" width="778.813" height="778.813" rx="33" transform="rotate(30.0717 378.251 -12)" fill="#2288A3" fill-opacity="0.1"/>
-  </svg>
-
+  <div class="square square--left">
+    <div class="circle"></div>
+  </div>
+  <div class="square square--right-top"></div>
+  <div class="square square--right">
+    <div class="circle"></div>
+  </div>
+  <div class="square square--right-bottom"></div>
   <main>
     <svg class="caution" width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M36 27L36 37.5M36 45V45.03" stroke="#19357C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -83,14 +79,24 @@
     </div>
   </footer>
   <script>
+    const futureDate = new Date(Date.parse("May 1, 2022"));
+    const now = new Date();
+
+    const totalMinutes = Math.trunc((futureDate - now) / 1000 / 60);
+
+    let minutesValue = Math.trunc(totalMinutes % 60);
+    let hoursValue = Math.trunc(totalMinutes / 60 % 24);
+    let daysValue = Math.trunc(totalMinutes / (60 * 24));
+
     const days = document.getElementById('days');
     const hours = document.getElementById('hours');
     const minutes = document.getElementById('minutes');
 
+    days.innerText = daysValue;
+    hours.innerText = hoursValue;
+    minutes.innerText = minutesValue;
+
     setInterval(() => {
-      let daysValue = +days.innerText;
-      let hoursValue = +hours.innerText;
-      let minutesValue = +minutes.innerText;
       if(daysValue <= 0 && hoursValue <= 0 && minutesValue <= 0)
         return;
 
